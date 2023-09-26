@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     # Publish data stream
     for value in data.iloc[:, 1]:
-        client.publish("current", value)
+        client.publish("current", value, qos = 0)
         time.sleep(1/sample_hz)
 
     # Disconnect MQTT

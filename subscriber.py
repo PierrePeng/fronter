@@ -5,7 +5,7 @@ import time
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
     #Subscribe for special topic name
-    client.subscribe("current")
+    client.subscribe("current", qos=0)
 
 # Callback function for recevie message
 def on_message(client, userdata, msg):
